@@ -1,0 +1,77 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                             http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <!-- Servlet for listing employees -->
+    <servlet>
+        <servlet-name>EmployeeListServlet</servlet-name>
+        <servlet-class>com.example.controller.EmployeeServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>EmployeeListServlet</servlet-name>
+        <url-pattern>/employeeList</url-pattern>
+    </servlet-mapping>
+
+    <!-- Servlet for adding a new employee -->
+  <servlet>
+        <servlet-name>AddEmployeeServlet</servlet-name>
+        <servlet-class>com.example.controller.EmployeeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddEmployeeServlet</servlet-name>
+        <url-pattern>/addEmployee</url-pattern>
+    </servlet-mapping>
+
+    <!-- Servlet for display a from for add an employee -->
+    <servlet>
+        <servlet-name>AddEmployeeFormServlet</servlet-name>
+        <servlet-class>com.example.controller.EmployeeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddEmployeeFormServlet</servlet-name>
+        <url-pattern>/addEmployeeForm</url-pattern>
+    </servlet-mapping>
+
+    <!-- Servlet for editing an employee -->
+    <servlet>
+        <servlet-name>EditEmployeeServlet</servlet-name>
+        <servlet-class>com.example.controller.EmployeeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditEmployeeServlet</servlet-name>
+        <url-pattern>/editEmployee</url-pattern>
+    </servlet-mapping>
+
+    <!-- Servlet for filter employees -->
+    <servlet>
+        <servlet-name>FilterEmployeeServlet</servlet-name>
+        <servlet-class>com.example.controller.EmployeeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FilterEmployeeServlet</servlet-name>
+        <url-pattern>/filterEmployees</url-pattern>
+    </servlet-mapping>
+
+    <!-- Servlet for search for employees -->
+    <servlet>
+        <servlet-name>SearchForEmployeeServlet</servlet-name>
+        <servlet-class>com.example.controller.EmployeeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchForEmployeeServlet</servlet-name>
+        <url-pattern>/searchForEmployee</url-pattern>
+    </servlet-mapping>
+
+    <!-- Servlet for deleting an employee -->
+    <servlet>
+        <servlet-name>DeleteEmployeeServlet</servlet-name>
+        <servlet-class>com.example.controller.EmployeeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteEmployeeServlet</servlet-name>
+        <url-pattern>/deleteEmployee</url-pattern>
+    </servlet-mapping>
+</web-app>
