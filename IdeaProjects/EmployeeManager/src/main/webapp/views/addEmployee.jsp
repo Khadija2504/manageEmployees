@@ -9,33 +9,40 @@
 <html>
 <head>
     <title>Ajouter un employé</title>
+    <link href="${pageContext.request.contextPath}/styles/formsStyle.css" rel="stylesheet" type="text/css">
+    <link href="${pageContext.request.contextPath}/styles/navStyle.css" rel="stylesheet" type="text/css">
+    <link href="${pageContext.request.contextPath}/styles/searchbar.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <%@ include file="navbar.jsp" %>
-<h1>Ajouter un nouvel employé</h1>
-<form action="addEmployee?action=updateEmployee" method="post">
-    <label>Nom: <input type="text" name="name"></label><br>
-    <label>Email: <input type="email" name="email"></label><br>
-    <label>Téléphone: <input type="text" name="phone"></label><br>
-    <label>Département: <input type="text" name="department"></label><br>
-    <label>Poste: <input type="text" name="position"></label><br>
-    <button type="submit">Ajouter</button>
-</form>
+<h2>Ajouter un nouvel employé</h2>
 
 <div class="container">
     <div class="screen">
         <div class="screen__content">
-            <form class="login">
+            <form class="login" action="addEmployee?action=addEmployee" method="post">
                 <div class="login__field">
                     <i class="login__icon fas fa-user"></i>
-                    <input type="text" class="login__input" placeholder="User name / Email">
+                    <input type="text" name="name" class="login__input" placeholder="Name">
                 </div>
                 <div class="login__field">
                     <i class="login__icon fas fa-lock"></i>
-                    <input type="password" class="login__input" placeholder="Password">
+                    <input type="email" name="email" class="login__input" placeholder="Email">
                 </div>
-                <button class="button login__submit">
-                    <span class="button__text">Log In Now</span>
+                <div class="login__field">
+                    <i class="login__icon fas fa-user"></i>
+                    <input type="text" name="phone" class="login__input" placeholder="phone">
+                </div>
+                <div class="login__field">
+                    <i class="login__icon fas fa-user"></i>
+                    <input type="text" class="login__input" name="department" placeholder="Department">
+                </div>
+                <div class="login__field">
+                    <i class="login__icon fas fa-user"></i>
+                    <input type="text" class="login__input" name="poste" placeholder="Poste">
+                </div>
+                <button type="submit" class="button login__submit">
+                    <span class="button__text">Add employee</span>
                     <i class="button__icon fas fa-chevron-right"></i>
                 </button>
             </form>

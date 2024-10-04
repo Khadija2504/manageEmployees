@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Raleway, sans-serif;
+}
+
+body {
+    background: linear-gradient(90deg, #C7C5F4, #776BCC);
+}
 
 .container {
     display: flex;
@@ -75,7 +87,6 @@
 .login {
     width: 320px;
     padding: 30px;
-    padding-top: 156px;
 }
 
 .login__field {

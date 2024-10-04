@@ -4,6 +4,10 @@
                              http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
     <!-- Servlet for listing employees -->
     <servlet>
         <servlet-name>EmployeeListServlet</servlet-name>
@@ -16,7 +20,7 @@
     </servlet-mapping>
 
     <!-- Servlet for adding a new employee -->
-  <servlet>
+    <servlet>
         <servlet-name>AddEmployeeServlet</servlet-name>
         <servlet-class>com.example.controller.EmployeeServlet</servlet-class>
     </servlet>
@@ -62,7 +66,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>SearchForEmployeeServlet</servlet-name>
-        <url-pattern>/searchForEmployee</url-pattern>
+        <url-pattern>/searchEmployee</url-pattern>
     </servlet-mapping>
 
     <!-- Servlet for deleting an employee -->

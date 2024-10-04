@@ -24,6 +24,12 @@ public class EmployeeServlet extends HttpServlet {
             case "updateEmployee":
                 updateEmployee(request, response);
                 break;
+            case "searchEmployee":
+                searchEmployee(request, response);
+                break;
+            case "filterEmployee":
+                filterEmployee(request, response);
+                break;
         }
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -40,12 +46,6 @@ public class EmployeeServlet extends HttpServlet {
                 break;
             case "employeeList":
                 displayEmployeesList(request, response);
-                break;
-            case "filterEmployee":
-                filterEmployee(request, response);
-                break;
-            case "searchEmployee":
-                searchForEmployee(request, response);
                 break;
         }
     }
@@ -66,18 +66,18 @@ public class EmployeeServlet extends HttpServlet {
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
         String department = request.getParameter("department");
-        String position = request.getParameter("position");
+        String poste = request.getParameter("poste");
 
-        Employee employee = new Employee(name, email, phone, department, position);
+        Employee employee = new Employee(name, email, phone, department, poste);
         EmployeeDAO.save(employee);
 
-        response.sendRedirect("employeeList");
+        response.sendRedirect("employeeList?action=employeeList");
     }
 
     protected void deleteEmployee(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         EmployeeDAO.delete(id);
-        response.sendRedirect("employeeList");
+        response.sendRedirect("employeeList?action=employeeList");
     }
 
     private void updateEmployee(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -86,13 +86,13 @@ public class EmployeeServlet extends HttpServlet {
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
         String department = request.getParameter("department");
-        String position = request.getParameter("position");
+        String poste = request.getParameter("poste");
 
-        Employee employee = new Employee(name, email, phone, department, position);
+        Employee employee = new Employee(name, email, phone, department, poste);
         employee.setId(id);
         EmployeeDAO.update(employee);
 
-        response.sendRedirect("employeeList");
+        response.sendRedirect("employeeList?action=employeeList");
     }
     private void filterEmployee(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String poste = request.getParameter("poste");
@@ -104,7 +104,11 @@ public class EmployeeServlet extends HttpServlet {
         request.getRequestDispatcher("views/employeeList.jsp").forward(request, response);
     }
 
-    private void searchForEmployee(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void startupRedirect(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.sendRedirect(request.getContextPath() + "/employeeList?action=employeeList");
+    }
+
+    private void searchEmployee(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Employee> employeeList = getAll();
         String searchQuery = request.getParameter("searchQuery");
         List<Employee> result =  employeeList.stream()

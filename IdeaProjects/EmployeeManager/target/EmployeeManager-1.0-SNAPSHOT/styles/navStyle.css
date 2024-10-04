@@ -46,8 +46,9 @@ body {
 .nav {
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     padding-bottom: 20px;
+    align-items: center;
     border-radius: 5px 5px 25px 25px;
     background: var(--white);
     box-shadow: rgb(50 50 93 / 10%) 0 30px 60px -12px,
@@ -64,6 +65,7 @@ body {
     width: 75px;
     height: 75px;
     top: 55px;
+    left: 10%;
     display: flex;
     align-items: center;
     justify-content: center;

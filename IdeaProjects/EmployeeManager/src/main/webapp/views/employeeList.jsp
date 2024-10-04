@@ -5,6 +5,8 @@
     <title>Liste des employés</title>
     <link href="${pageContext.request.contextPath}/styles/tableStyle.css" rel="stylesheet" type="text/css">
     <link href="${pageContext.request.contextPath}/styles/navStyle.css" rel="stylesheet" type="text/css">
+    <link href="${pageContext.request.contextPath}/styles/searchbar.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
 <%@ include file="navbar.jsp" %>
